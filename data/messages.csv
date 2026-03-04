@@ -1,0 +1,2 @@
+timestamp,nom,email,telephone,sujet,message
+"2026-03-03T14:41:59.024Z","Automated Test","automated@test.example","0661678643","Test POST","Ceci est un test d'envoi via test_send.js"
