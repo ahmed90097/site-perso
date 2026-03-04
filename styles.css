@@ -351,7 +351,8 @@ img {
 
     .hero {
         min-height: 80vh;
-        padding-top: 40px;
+        /* leave space for fixed navbar on small screens */
+        padding-top: 88px;
         padding-bottom: 40px;
     }
 
@@ -415,6 +416,52 @@ img {
     /* show mobile nav toggle if present */
     .nav-menu { display: none; }
     .nav-toggle { display: flex; }
+}
+
+/* Mobile nav open/close styles */
+@media (max-width: 600px) {
+    .nav-menu {
+        position: absolute;
+        top: 64px;
+        right: 16px;
+        background: rgba(15,15,26,0.95);
+        padding: 12px;
+        border-radius: 12px;
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 200px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+        z-index: 1200;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-menu .nav-link {
+        color: var(--white);
+        padding: 10px 14px;
+        background: transparent;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .nav-toggle {
+        background: transparent;
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
 
 /* Designed photo frame + overlays */
